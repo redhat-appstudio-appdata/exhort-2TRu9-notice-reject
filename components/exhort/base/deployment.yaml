@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: exhort
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: exhort
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: exhort
+    app.kubernetes.io/part-of: exhort
+  name: exhort
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: exhort
+      app.kubernetes.io/instance: exhort
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: exhort
+        app.kubernetes.io/instance: exhort
+    spec:
+      containers:
+      - env:
+        - name: API_SNYK_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: api-snyk-token
+              name: exhort-secret
+        - name: MONITORING_ENABLED
+          value: "true"
+        - name: MONITORING_SENTRY_DSN
+          valueFrom:
+            secretKeyRef:
+              key: sentry-dsn
+              name: exhort-secret
+        - name: MONITORING_SENTRY_SERVERNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MONITORING_SENTRY_ENVIRONMENT
+          value: development
+        - name: TELEMETRY_WRITE_KEY
+          valueFrom:
+            secretKeyRef:
+              key: telemetry-write-key
+              name: exhort-secret
+        image: exhort:latest
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /q/health/live
+            port: 8080
+          initialDelaySeconds: 1
+        name: exhort
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 9000
+          name: management
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /q/health/ready
+            port: 9000
+          initialDelaySeconds: 5
+          periodSeconds: 20
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 128Mi
+status: {}
