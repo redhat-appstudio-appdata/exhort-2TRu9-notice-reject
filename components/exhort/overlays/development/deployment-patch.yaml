@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: exhort
+spec:
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/exhort@sha256:a7007ee41a478317a5a95b470b5f903edb05cd7346fd579f7ccbc17fd1d0723a
+        name: exhort
+        resources: {}
+status: {}

@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: exhort
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: exhort
+    app.kubernetes.io/part-of: exhort
+  name: exhort3bsj
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: exhort
+    weight: null
+status: {}
