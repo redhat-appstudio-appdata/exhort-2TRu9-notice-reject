@@ -12,7 +12,7 @@ metadata:
 spec:
   path: /
   port:
-    targetPort: 8080
+    targetPort: 9000
   to:
     kind: Service
     name: exhort
