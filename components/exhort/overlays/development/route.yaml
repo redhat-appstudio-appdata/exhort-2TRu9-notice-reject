@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: exhort
     app.kubernetes.io/part-of: exhort
-  name: exhort3bsj
+  name: exhortotvt
 spec:
   path: /
   port:
