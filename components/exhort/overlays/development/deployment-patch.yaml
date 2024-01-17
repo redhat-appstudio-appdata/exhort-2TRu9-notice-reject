@@ -12,7 +12,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/exhort@sha256:369b50a7d215c5adf9a2eff2aef9a9851baf58767482dddecfd91ab2a70cf7be
+      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/exhort@sha256:81a120a1aea3df6014b4add3cc3ce707a7230eb1a594522a09dccb0cb9126dba
         name: exhort
         resources: {}
 status: {}
