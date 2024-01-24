@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: onguard
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/onguard@sha256:55b97d8bcbf9fe218c7e7b845ac1f3c2ca023969a342c109bc142767ee3daa1c
+        name: my-java-quarkus
+        resources: {}
+status: {}
