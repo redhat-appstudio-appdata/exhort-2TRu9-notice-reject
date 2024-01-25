@@ -12,7 +12,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/onguard@sha256:f1d9912269a70514eebedb8fd15f8b08b9cee7c22291d494a48674dcbeee2107
+      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/onguard@sha256:eda9927124a40f7c868d73c8de9f59e88c2c07115b6df3181f707934c87cea7e
         name: my-java-quarkus
         resources: {}
 status: {}
