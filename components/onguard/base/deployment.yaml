@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: onguard
     spec:
       containers:
-      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/onguard@sha256:1dcab67c4b831ea2766264592e774ab6ff446a3e31219fe1dfb0a59ae452a369
+      - image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/onguard@sha256:359231f613164956a60f63dbdd7df8f739c7a689ab364b9c557b83c2a0178b79
         name: my-java-quarkus
         ports:
         - containerPort: 8081
