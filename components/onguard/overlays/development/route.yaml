@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: onguard
     app.kubernetes.io/part-of: exhort
-  name: onguard7fdd
+  name: onguardlztz
 spec:
   path: /
   port:
