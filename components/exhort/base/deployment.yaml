@@ -50,7 +50,7 @@ spec:
             secretKeyRef:
               key: telemetry-write-key
               name: exhort-secret
-        image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/exhort@sha256:dc4b65a38503110df51be6af0d73d18ec3c938861394b6d30245f1598f4e0dbe
+        image: quay.io/redhat-user-workloads/trusted-content-tenant/exhort/exhort@sha256:b358febb4c4edf89d42d210cb48492804d96e7e15c1b5a75c568f5194e3cf344
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
